@@ -1,14 +1,9 @@
 # Chapter 1. Overview
 
-This document is intended for any transfer Partners considering connecting Carzenplus as a transfer
-service provider, The current document gives the partner platform all the needed information to kick-off
-the integration of Carzenplus Transfers Connectors.
-Carzenplus airport transfer APIs are designed using a RESTful architecture, which relies on predictable,
-resource-oriented URLs, and HTTP response codes to indicate errors. It uses built-in HTTP features,
-like HTTP authentication and HTTP verbs, supported by most HTTP clients.
-Please also note that our current API version is 1, and all endpoints described in this document will
-begin with /v1/.
-For online tests, please visit This Url. If you need an `AccessKey ID`, or `AccessKey secret`, please contact us.
+This document is intended for any transfer Partners considering connecting Carzenplus as a transfer service provider, The current document gives the partner platform all the needed information to kick-off the integration of Carzenplus Transfers Connectors.
+Carzenplus airport transfer APIs are designed using a RESTful architecture, which relies on predictable, resource-oriented URLs, and HTTP response codes to indicate errors. It uses built-in HTTP features, like HTTP authentication and HTTP verbs, supported by most HTTP clients.
+Please also note that our current API version is 1, and all endpoints described in this document will begin with /v1/.
+For online tests, please visit This Url. If you need an AccessKey ID, or AccessKey secret, please contact us.
 
 ## 1.1 Version information
 > Version : v1
@@ -44,8 +39,7 @@ POST /transfer/query
 
 ### 3.1.1. Description
 
-The Query resource is the one used to search for available transfer solutions and to get from the
-details and prices for each solution
+The Query resource is the one used to search for available transfer solutions and to get from the details and prices for each solution.
 
 ### 3.1.2. Parameters
 
