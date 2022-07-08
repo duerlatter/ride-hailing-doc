@@ -39,7 +39,7 @@ POST /transfer/query
 
 ### 3.1.1. Description
 
-The Query resource is the one used to search for available transfer solutions and to get from the details and prices for each solution.
+The Query resource is the one used to search for available transfer solutions and to get the details and prices for each solution.
 
 ### 3.1.2. Parameters
 
