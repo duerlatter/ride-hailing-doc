@@ -264,7 +264,9 @@ Before making a reservation, you must query first.
     "passenger_contact_info":{
         "passenger_name":"Zhang San",
         "passenger_phone":"+8613888888888",
-        "passenger_email":"xx@gmail.com"
+        "passenger_email":"xx@gmail.com",
+        "passenger_whats_app_account": "",
+        "passenger_wechat_account": ""
     },
     "luggage_info":{
         "medium":1,
@@ -333,7 +335,9 @@ Before making a reservation, you must query first.
         "passenger_contact_info": {
             "passenger_name": "Zhang San",
             "passenger_phone": "+8613888888888",
-            "passenger_email": ""
+            "passenger_email": "",
+            "passenger_whats_app_account": "",
+            "passenger_wechat_account": ""
         },
         "luggage_info": {
             "medium": 1,
@@ -565,7 +569,9 @@ The Detail resource is used to view a Transfer order details.
         "passenger_contact_info": {
             "passenger_name": "Zhang San",
             "passenger_phone": "+8613888888888",
-            "passenger_email": ""
+            "passenger_email": "",
+            "passenger_whats_app_account": "",
+            "passenger_wechat_account": ""
         },
         "luggage_info": {
             "medium": 1,
@@ -718,11 +724,13 @@ The Detail resource is used to view a Transfer order details.
 ## 4.9.PassengerContactInfo
 
 
-| Name                              | Description                | Schema  |
-|-----------------------------------|----------------------------|---------|
-| **passenger_name** <br> required  | Name of passenger          | string  |
-| **passenger_phone** <br> required | Mobile phone of passenger  | string  |
-| **passenger_email** <br> required | Email address of passenger | string  |
+| Name                                          | Description                | Schema  |
+|-----------------------------------------------|----------------------------|---------|
+| **passenger_name** <br> required              | Name of passenger          | string  |
+| **passenger_phone** <br> required             | Mobile phone of passenger  | string  |
+| **passenger_email** <br> optional             | Email address of passenger | string  |
+| **passenger_whats_app_account** <br> optional | WhatsApp account of passenger | string  |
+| **passenger_wechat_account** <br> optional    | Wechat account of passenger | string  |
 
 
 ## 4.10.TransferServiceItem
