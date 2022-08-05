@@ -78,8 +78,8 @@ The Query resource is the one used to search for available transfer solutions an
 ``` JSON
 {
     "authentication":{
-        "signature":"2b277d2ed7a72af8c4ef840e32c0260d",
-        "access_key":"dylGLg"
+        "signature":"702f79097da2d8b2314cae3af31bf26d",
+        "access_key":"xBPbzY"
     },
     "pick_up":{
         "name":"Xiaoshan Airport",
@@ -109,7 +109,7 @@ The Query resource is the one used to search for available transfer solutions an
     },
     "duration_in_seconds":"2998",
     "distance_in_meters":"47310",
-    "booking_time":1657173773,
+    "booking_time":1659507431,
     "flight_code":"CA1234",
     "transfer_type":"Airport2Point",
     "currency":"CNY"
@@ -126,44 +126,74 @@ The Query resource is the one used to search for available transfer solutions an
 
 ``` JSON
 {
-    "code":200,
-    "success":true,
-    "request_id":"25618f7199074c29",
-    "message":"Success",
-    "data":{
-        "price":757.12,
-        "currency":"CNY",
-        "transfer_ticket_info":{
-            "ticket":"VJTs8MZEcLzxwCOAX8QvhQpQ3BwCIUcL",
-            "expire_time":1657090172
-        },
-        "transfer_type":"Airport2Point",
-        "transfer_services":[
+    "code": 200,
+    "success": true,
+    "message": "Success",
+    "data": {
+        "currency": "CNY",
+        "transfer_type": "Airport2Point",
+        "transfer_services": [
             {
-                "code":"BabySeat",
-                "name":"Baby Seat",
-                "price":134,
-                "description":"description",
-                "max_booking_count":10
+                "price": 135.00,
+                "description": "",
+                "service_code": "BabySeat",
+                "service_name": "Baby Seat",
+                "max_booking_count": 10
             }
         ],
-        "transfer_vehicle": {
-            "description": "",
-            "vehicle_name": "Q7 or similar",
-            "brand_name": "Audi or similar",
-            "vehicle_id": 2,
-            "max_passenger_quantity": 5,
-            "max_luggage_quantity": 5,
-            "vehicle_icon": "https://misc-cn.carzenplus.com/car-model/2.png"
+        "transfer_vehicles": [
+            {
+                "description": "Audi or similar",
+                "price": 1425.60,
+                "vehicle_name": "A6 or similar",
+                "brand_name": "Audi or similar",
+                "vehicle_id": 1,
+                "max_passenger_quantity": 5,
+                "max_luggage_quantity": 1,
+                "vehicle_icon": "",
+                "transfer_ticket_info": {
+                    "ticket": "kdb6JNE7J9dcoV91X2YiX2jqnmJYg923",
+                    "expire_time": 1659693529
+                }
+            },
+            {
+                "description": "",
+                "price": 549.45,
+                "vehicle_name": "Q7 or similar",
+                "brand_name": "Audi or similar",
+                "vehicle_id": 2,
+                "max_passenger_quantity": 7,
+                "max_luggage_quantity": 5,
+                "vehicle_icon": "",
+                "transfer_ticket_info": {
+                    "ticket": "BVuCP5fSVKzPsPF5yR9TxJPf1k0nWV8b",
+                    "expire_time": 1659693529
+                }
+            },
+            {
+                "description": "",
+                "price": 867.24,
+                "vehicle_name": "GL8 or similar",
+                "brand_name": "Buick",
+                "vehicle_id": 3,
+                "max_passenger_quantity": 7,
+                "max_luggage_quantity": 7,
+                "vehicle_icon": "",
+                "transfer_ticket_info": {
+                    "ticket": "9rMqVpWEo5Vb2mQ10BmeXEBvCS2OXk7M",
+                    "expire_time": 1659693529
+                }
+            }
+        ],
+        "provider": {
+            "name": "Carzen Plus",
+            "logo_url": ""
         },
-        "provider":{
-            "name":"Carzenplus",
-            "logo_url":"logo_url"
-        },
-        "duration_in_seconds":3000,
-        "distance_in_meters":47318
+        "duration_in_seconds": 3060,
+        "distance_in_meters": 47310
     },
-    "server_time":1657088372
+    "request_id": "37a85acdafd74882",
+    "server_time": 1659691729
 }
 
 
@@ -234,14 +264,14 @@ Before making a reservation, you must query first.
 {
     "remark":"remark",
     "authentication":{
-        "signature":"2b277d2ed7a72af8c4ef840e32c0260d",
-        "access_key":"dylGLg"
+        "signature":"702f79097da2d8b2314cae3af31bf26d",
+        "access_key":"xBPbzY"
     },
-    "transfer_ticket":"VJTs8MZEcLzxwCOAX8QvhQpQ3BwCIUcL",
+    "transfer_ticket":"9rMqVpWEo5Vb2mQ10BmeXEBvCS2OXk7M",
     "flight_code":"CA1234",
     "transfer_type":"Airport2Point",
     "currency":"CNY",
-    "partner_order_sn":"D1344067",
+    "partner_order_sn":"D1344068",
     "pick_up":{
         "name":"Xiaoshan Airport",
         "latitude":30.236189,
@@ -264,16 +294,11 @@ Before making a reservation, you must query first.
     "passenger_contact_info":{
         "passenger_name":"Zhang San",
         "passenger_phone":"+8613888888888",
-        "passenger_email":"xx@gmail.com",
-        "passenger_whats_app_account": "",
-        "passenger_wechat_account": ""
+        "passenger_email":"xx@gmail.com"
     },
     "luggage_info":{
         "medium":1,
         "small":1
-    },
-    "vehicle_info":{
-        "vehicle_name":"MPV 4pax"
     },
     "transfer_services":[
         {
@@ -284,13 +309,13 @@ Before making a reservation, you must query first.
         }
     ],
     "price_detail":{
-        "transfer_fee":99,
-        "service_fee":100.01,
-        "total_fee":199.01
+        "transfer_fee":867.24,
+        "service_fee":135,
+        "total_fee":1002.24
     },
-    "duration_in_seconds":"2998",
+    "duration_in_seconds":"3060",
     "distance_in_meters":"47310",
-    "booking_time":1657193584
+    "booking_time":1659692551
 }
 
 ```
@@ -306,9 +331,9 @@ Before making a reservation, you must query first.
     "success": true,
     "message": "Success",
     "data": {
-        "order_status": "WAIT_DISPATCH",
-        "order_sn": "SD2022070708342",
-        "partner_order_sn": "D1344067",
+        "order_status": "WAIT_CONFIRM",
+        "order_sn": "SD2022080508361",
+        "partner_order_sn": "D1344068",
         "flight_code": "CA1234",
         "transfer_type": "Airport2Point",
         "currency": "CNY",
@@ -318,14 +343,14 @@ Before making a reservation, you must query first.
             "latitude": 30.236189,
             "longitude": 120.438842,
             "address": "Hangzhou International Airport (HGH)",
-            "google_place_id": null
+            "google_place_id": "ChIJeZr5cP6TTDQROhcfDB7aCh4"
         },
         "drop_off": {
             "name": "Zhejiang University",
             "latitude": 30.308888,
             "longitude": 120.086499,
             "address": "No. 866 Yuhangtang Road, Xihu District, Hangzhou, Zhejiang ,China Postal",
-            "google_place_id": null
+            "google_place_id": "ChIJc9VHk-ViSzQRoIFvkzZfGsc"
         },
         "passenger_info": {
             "adults": 1,
@@ -335,9 +360,9 @@ Before making a reservation, you must query first.
         "passenger_contact_info": {
             "passenger_name": "Zhang San",
             "passenger_phone": "+8613888888888",
-            "passenger_email": "",
-            "passenger_whats_app_account": "",
-            "passenger_wechat_account": ""
+            "passenger_email": "xx@gmail.com",
+            "passenger_whats_app_account": null,
+            "passenger_wechat_account": null
         },
         "luggage_info": {
             "medium": 1,
@@ -345,31 +370,32 @@ Before making a reservation, you must query first.
         },
         "transfer_services": [
             {
-                "service_code": "BabySeat",
-                "service_name": "Baby Seat",
                 "price": 100.01,
-                "quantity": 1
+                "quantity": 1,
+                "service_code": "BabySeat",
+                "service_name": "Baby Seat"
             }
         ],
         "transfer_vehicle": {
             "color": null,
             "plate_number": null,
-            "brand_name": "Audi or similar",
-            "model": "Q7 or similar"
+            "brand_name": "Buick",
+            "model": "GL8 or similar"
         },
         "provider": {
-            "name": "Carzenplus",
+            "name": "Carzen Plus",
             "logo_url": null
         },
         "price_detail": {
-            "transfer_fee": 99.00,
+            "transfer_fee": 902.23,
             "service_fee": 100.01,
-            "total_fee": 199.01
+            "total_fee": 1002.24
         },
-        "driver_info": null
+        "driver_info": null,
+        "booking_time": 1659692551
     },
-    "request_id": "bb1f196ca78f4dd8",
-    "server_time": 1657194049
+    "request_id": "32c6425721f849d9",
+    "server_time": 1659692704
 }
 
 ```
@@ -418,14 +444,14 @@ The Cancellation resource is used to cancel a Transfer reservation and to get fr
 ### 3.3.3. Responses
 
 
-| Name            | Description                                   | Schema           |
-|-----------------|-----------------------------------------------|------------------|
-| **code**        | 200 is success, others number is error flags  | integer(int32)   |
-| **success**     | true or false                                 | boolean          |
-| **request_id**  | Request unique id                             | string           |
-| **message**     | Message                                       | string           |
-| **data**        | Void,                                         | none             |
-| **server_time** | Unix time                                     | integer(int64)   |
+| Name            | Description                                  | Schema                                 |
+|-----------------|----------------------------------------------|----------------------------------------|
+| **code**        | 200 is success, others number is error flags | integer(int32)                         |
+| **success**     | true or false                                | boolean                                |
+| **request_id**  | Request unique id                            | string                                 |
+| **message**     | Message                                      | string                                 |
+| **data**        | Response data,                               | [BookingCancelVO](#423bookingcancelvo) |
+| **server_time** | Unix time                                    | integer(int64)                         |
 
 ### 3.3.4. Consumes
 
@@ -444,11 +470,11 @@ The Cancellation resource is used to cancel a Transfer reservation and to get fr
 ``` JSON
 {
     "authentication":{
-        "signature":"2b277d2ed7a72af8c4ef840e32c0260d",
-        "access_key":"dylGLg"
+        "signature":"702f79097da2d8b2314cae3af31bf26d",
+        "access_key":"xBPbzY"
     },
-    "order_sn":"SD2022070708342",
-    "reason":"Cancel Reason"
+    "reason":"Cancel Reason",
+    "order_sn":"SD2022080508361"
 }
 ```
 
@@ -461,8 +487,17 @@ The Cancellation resource is used to cancel a Transfer reservation and to get fr
     "code": 200,
     "success": true,
     "message": "Success",
-    "request_id": "d269af6e0f924628",
-    "server_time": 1657242643
+    "data": {
+        "currency": "CNY",
+        "cancel_time": 1659693530,
+        "order_total_price": 1002.24,
+        "cancel_loss_fee": 1002.24,
+        "order_sn": "SD2022080508361",
+        "partner_order_sn": "D1344068",
+        "cancel_type": "ALL_LOSS_CANCEL"
+    },
+    "request_id": "9d26b69fda6f40e1",
+    "server_time": 1659693530
 }
 ```
 
@@ -523,10 +558,10 @@ The Detail resource is used to view a Transfer order details.
 ``` JSON
 {
     "authentication":{
-        "signature":"2b277d2ed7a72af8c4ef840e32c0260d",
-        "access_key":"dylGLg"
+        "signature":"702f79097da2d8b2314cae3af31bf26d",
+        "access_key":"xBPbzY"
     },
-    "order_sn":"SD2022070708342"
+    "order_sn":"SD2022080508361"
 }
 ```
 
@@ -540,9 +575,9 @@ The Detail resource is used to view a Transfer order details.
     "success": true,
     "message": "Success",
     "data": {
-        "order_status": "CANCELLED",
-        "order_sn": "SD2022070708342",
-        "partner_order_sn": "D1344067",
+        "order_status": "WAIT_DISPATCH",
+        "order_sn": "SD2022080508361",
+        "partner_order_sn": "D1344068",
         "flight_code": "CA1234",
         "transfer_type": "Airport2Point",
         "currency": "CNY",
@@ -552,14 +587,14 @@ The Detail resource is used to view a Transfer order details.
             "latitude": 30.236189,
             "longitude": 120.438842,
             "address": "Hangzhou International Airport (HGH)",
-            "google_place_id": null
+            "google_place_id": "ChIJeZr5cP6TTDQROhcfDB7aCh4"
         },
         "drop_off": {
             "name": "Zhejiang University",
             "latitude": 30.308888,
             "longitude": 120.086499,
             "address": "No. 866 Yuhangtang Road, Xihu District, Hangzhou, Zhejiang ,China Postal",
-            "google_place_id": null
+            "google_place_id": "ChIJc9VHk-ViSzQRoIFvkzZfGsc"
         },
         "passenger_info": {
             "adults": 1,
@@ -569,9 +604,9 @@ The Detail resource is used to view a Transfer order details.
         "passenger_contact_info": {
             "passenger_name": "Zhang San",
             "passenger_phone": "+8613888888888",
-            "passenger_email": "",
-            "passenger_whats_app_account": "",
-            "passenger_wechat_account": ""
+            "passenger_email": "xx@gmail.com",
+            "passenger_whats_app_account": null,
+            "passenger_wechat_account": null
         },
         "luggage_info": {
             "medium": 1,
@@ -588,22 +623,23 @@ The Detail resource is used to view a Transfer order details.
         "transfer_vehicle": {
             "color": null,
             "plate_number": null,
-            "brand_name": "Audi or similar",
-            "model": "Q7 or similar"
+            "brand_name": "Buick",
+            "model": "GL8 or similar"
         },
         "provider": {
-            "name": "Carzenplus ",
+            "name": "Carzen Plus",
             "logo_url": null
         },
         "price_detail": {
-            "transfer_fee": 99.00,
+            "transfer_fee": 902.23,
             "service_fee": 100.01,
-            "total_fee": 199.01
+            "total_fee": 1002.24
         },
-        "driver_info": null
+        "driver_info": null,
+        "booking_time": 1659692551
     },
-    "request_id": "3a940f658da44e60",
-    "server_time": 1657244829
+    "request_id": "a7e3e5edc11d476b",
+    "server_time": 1659692876
 }
 
 ```
@@ -626,20 +662,20 @@ The Detail resource is used to view a Transfer order details.
 ## 4.1.TransferQueryInfo
 
 
-| Name                                  | Description                                                      | Scheme                                                      |
-|---------------------------------------|------------------------------------------------------------------|-------------------------------------------------------------|
-| **authentication** <br> required      | Authentication parameter                                         | [TransferAuthenticationInfo](#42transferauthenticationinfo) |
-| **pick_up** <br> required             | Starting point information (address , name, latitude, longitude) | [TransferPointInfo](#43transferpointinfo)                   |
-| **drop_off** <br> required            | End point information (address , name, latitude, longitude)      | [TransferPointInfo](#43transferpointinfo)                   |
-| **passenger_info** <br> required      | Number of passenger, include adults, children,infants            | [PassengerInfo](#44passengerinfo)                           |
-| **luggage_info** <br> optional        | Requirements to luggage space to be supported by the vehicle     | [LuggageInfo](#45luggageinfo)                               |
-| **vehicle_info** <br> required        | Platform model information, need to contact us to bind           | [TransferVehicleInfo](#46transfervehicleinfo)               |
-| **duration_in_seconds** <br> required | The numeric duration, in seconds.                                | integer (int64)                                             |
-| **distance_in_meters** <br> required  | The numeric distance, in meters.                                 | integer  (int64)                                            |
-| **booking_time** <br> required        | The booking time. unix timestamp                                 | integer  (int64)                                            |
-| **flight_code** <br> optional         | The numeric flight number.                                       | string                                                      |
-| **transfer_type** <br> required       | The type of transfer.                                            | enum <br>Airport2Point <br> Point2Airport <br> Point2Point  |
-| **currency** <br> required            | TheCurrency code in ISO 4217 format.                             | string                                                      |
+| Name                                  | Description                                                         | Scheme                                                      |
+|---------------------------------------|---------------------------------------------------------------------|-------------------------------------------------------------|
+| **authentication** <br> required      | Authentication parameter                                            | [TransferAuthenticationInfo](#42transferauthenticationinfo) |
+| **pick_up** <br> required             | Starting point information (address , name, latitude, longitude)    | [TransferPointInfo](#43transferpointinfo)                   |
+| **drop_off** <br> required            | End point information (address , name, latitude, longitude)         | [TransferPointInfo](#43transferpointinfo)                   |
+| **passenger_info** <br> required      | Number of passenger, include adults, children,infants               | [PassengerInfo](#44passengerinfo)                           |
+| **luggage_info** <br> optional        | Requirements to luggage space to be supported by the vehicle        | [LuggageInfo](#45luggageinfo)                               |
+| **vehicle_info** <br> optional        | Platform model information, need to contact us to bind , null = ALL | [TransferVehicleInfo](#46transfervehicleinfo)               |
+| **duration_in_seconds** <br> required | The numeric duration, in seconds.                                   | integer (int64)                                             |
+| **distance_in_meters** <br> required  | The numeric distance, in meters.                                    | integer  (int64)                                            |
+| **booking_time** <br> required        | The booking time. unix timestamp                                    | integer  (int64)                                            |
+| **flight_code** <br> optional         | The numeric flight number.                                          | string                                                      |
+| **transfer_type** <br> required       | The type of transfer.                                               | enum <br>Airport2Point <br> Point2Airport <br> Point2Point  |
+| **currency** <br> required            | TheCurrency code in ISO 4217 format.                                | string                                                      |
 
 
 ## 4.2.TransferAuthenticationInfo
@@ -656,11 +692,13 @@ The Detail resource is used to view a Transfer order details.
 
 | Name                              | Description           | Scheme          |
 |-----------------------------------|-----------------------|-----------------|
-| **name** <br> required            | Point name            | string          |
-| **google_place_id** <br> required | Google map placeId    | string          |
-| **address** <br> required         | Point address details | string          |
-| **latitude** <br> required        | Latitude              | number (double) |
-| **longitude** <br> required       | Longitude             | number (double) |
+| **name** <br> optional            | Point name            | string          |
+| **google_place_id** <br> optional | Google map placeId    | string          |
+| **address** <br> optional         | Point address details | string          |
+| **latitude** <br> optional        | Latitude              | number (double) |
+| **longitude** <br> optional       | Longitude             | number (double) |
+
+- `google_place_id` ,`address` , `latitude longitude` must be provided at least one.
 
 
 ## 4.4.PassengerInfo
@@ -702,7 +740,7 @@ The Detail resource is used to view a Transfer order details.
 | Name                                     | Description                                                             | Scheme                                                      |
 |------------------------------------------|-------------------------------------------------------------------------|-------------------------------------------------------------|
 | **authentication** <br> required         | Authentication parameter                                                | [TransferAuthenticationInfo](#42transferauthenticationinfo) |
-| **transfer_ticket** <br> required        | `/transfer/query` > transfer_ticket_info > ticket                       | string                                                      |
+| **transfer_ticket** <br> required        | `/transfer/query` > transfer_vehicles > transfer_ticket_info > ticket   | string                                                      |
 | **flight_code** <br> optional            | The numeric flight number.                                              | string                                                      |
 | **transfer_type** <br> required          | The type of transfer.                                                   | enum <br>Airport2Point <br> Point2Airport <br> Point2Point  |
 | **currency** <br> required               | TheCurrency code in ISO 4217 format.                                    | string                                                      |
@@ -713,7 +751,6 @@ The Detail resource is used to view a Transfer order details.
 | **passenger_info** <br> required         | Number of passenger, include adults, children,infants                   | [PassengerInfo](#44passengerinfo)                           |
 | **luggage_info** <br> optional           | Requirements to luggage space to be supported by the vehicle            | [LuggageInfo](#45luggageinfo)                               |
 | **passenger_contact_info** <br> required | Passengers’ information. Information about “main” passenger is required | [PassengerContactInfo](#49passengercontactinfo)             |
-| **vehicle_info** <br> required           | Platform model information, need to contact us to bind                  | [TransferVehicleInfo](#46transfervehicleinfo)               |
 | **transfer_services** <br> required      | Platform model information, need to contact us to bind                  | <[TransferServiceItem](#410transferserviceitem)> array      |
 | **price_detail** <br> required           | Payment detail                                                          | [OrderPriceDetail](#411orderpricedetail)                    |
 | **duration_in_seconds** <br> required    | The numeric duration, in seconds.                                       | integer (int32)                                             |
@@ -724,13 +761,13 @@ The Detail resource is used to view a Transfer order details.
 ## 4.9.PassengerContactInfo
 
 
-| Name                                          | Description                | Schema  |
-|-----------------------------------------------|----------------------------|---------|
-| **passenger_name** <br> required              | Name of passenger          | string  |
-| **passenger_phone** <br> required             | Mobile phone of passenger  | string  |
-| **passenger_email** <br> optional             | Email address of passenger | string  |
+| Name                                          | Description                   | Schema  |
+|-----------------------------------------------|-------------------------------|---------|
+| **passenger_name** <br> required              | Name of passenger             | string  |
+| **passenger_phone** <br> required             | Mobile phone of passenger     | string  |
+| **passenger_email** <br> optional             | Email address of passenger    | string  |
 | **passenger_whats_app_account** <br> optional | WhatsApp account of passenger | string  |
-| **passenger_wechat_account** <br> optional    | Wechat account of passenger | string  |
+| **passenger_wechat_account** <br> optional    | Wechat account of passenger   | string  |
 
 
 ## 4.10.TransferServiceItem
@@ -757,6 +794,7 @@ The Detail resource is used to view a Transfer order details.
 |------------------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
 | **order_status** <br> required           | OrderStatus                                                             | enum(<br>WAIT_CONFIRM <br>WAIT_DISPATCH<br>WAIT_ASSIGN<br>WAIT_SERVICE<br>SERVING<br>COMPLETED<br>CANCELLED<br>) |
 | **order_sn** <br> required               | Order number of Carzenplus                                              | string                                                                                                           |
+| **booking_time** <br> required           | The booking time. unix timestamp                                        | integer  (int64)                                                                                                 |
 | **partner_order_sn** <br> required       | Partner order number.                                                   | string                                                                                                           |
 | **flight_code** <br> required            | The flight number including airline code                                | string                                                                                                           |
 | **transfer_type** <br> required          | The type of transfer.                                                   | enum <br>Airport2Point <br> Point2Airport <br> Point2Point                                                       |
@@ -810,17 +848,16 @@ The Detail resource is used to view a Transfer order details.
 
 ## 4.17.TransferQueryVO
 
-| Name                                    | Description                       | Schema                                                     |
-|-----------------------------------------|-----------------------------------|------------------------------------------------------------|
-| **transfer_ticket_info** <br> required  | Book order ticket                 | [TransferTicket](#418transferticket)                       |
-| **transfer_type** <br> required         | The type of transfer.             | enum <br>Airport2Point <br> Point2Airport <br> Point2Point |
-| **price** <br> required                 | Itinerary price.                  | number (double)                                            |
-| **currency** <br> required              | Currency code in ISO 4217 format. | string                                                     |
-| **transfer_services** <br> required     | Transfer Services.                | [TransferServiceVO](#419transferservicevo)                 |
-| **transfer_vehicle** <br> required      | Vehicle information               | [TransferServiceVO](#420transfervehiclevo)                 |
-| **provider** <br> optional              | Provider Info                     | [PlatformProviderVO](#415platformprovidervo)               |
-| **duration_in_seconds** <br> required   | The numeric duration, in seconds. | integer (int64)                                            |
-| **distance_in_meters** <br> required    | The numeric distance, in meters.  | integer  (int64)                                           |
+| Name                                  | Description                       | Schema                                                       |
+|---------------------------------------|-----------------------------------|--------------------------------------------------------------|
+| **transfer_type** <br> required       | The type of transfer.             | enum <br>Airport2Point <br> Point2Airport <br> Point2Point   |
+| **price** <br> required               | Itinerary price.                  | number (double)                                              |
+| **currency** <br> required            | Currency code in ISO 4217 format. | string                                                       |
+| **transfer_services** <br> required   | Transfer Services.                | <[TransferServiceVO](#419transferservicevo)><br>array        |
+| **transfer_vehicles** <br> required   | Vehicle information               | <[TransferServiceVO](#420transfervehiclevo)> <br>array       |
+| **provider** <br> optional            | Provider Info                     | [PlatformProviderVO](#415platformprovidervo)                 |
+| **duration_in_seconds** <br> required | The numeric duration, in seconds. | integer (int64)                                              |
+| **distance_in_meters** <br> required  | The numeric distance, in meters.  | integer  (int64)                                             |
 
 
 ## 4.18.TransferTicket
@@ -842,15 +879,17 @@ The Detail resource is used to view a Transfer order details.
 
 ## 4.20.TransferVehicleVO
 
-| Name                                     | Description                        | Schema          |
-|------------------------------------------|------------------------------------|-----------------|
-| **vehicle_name** <br> optional           | Vehicle model. e.g. A6             | string          |
-| **brand_name** <br> optional             | Vehicle brand. e.g. Audi           | string          |
-| **vehicle_id** <br> optional             | Vehicle ID                         | integer (int32) |
-| **max_passenger_quantity** <br> required | Max seat count,without driver seat | integer (int32) |
-| **max_luggage_quantity** <br> required   | Max luggage count                  | integer (int32) |
-| **description** <br> optional            | Vehicle descriptions               | string          |
-| **vehicle_icon** <br> optional           | Vehicle picture url                | string          |
+| Name                                     | Description                        | Schema                                  |
+|------------------------------------------|------------------------------------|-----------------------------------------|
+| **transfer_ticket_info** <br> required   | Book order ticket                  | [TransferTicket](#418transferticket)    |
+| **vehicle_name** <br> optional           | Vehicle model. e.g. A6             | string                                  |
+| **brand_name** <br> optional             | Vehicle brand. e.g. Audi           | string                                  |
+| **vehicle_id** <br> optional             | Vehicle ID                         | integer (int64)                         |
+| **max_passenger_quantity** <br> required | Max seat count,without driver seat | integer (int32)                         |
+| **max_luggage_quantity** <br> required   | Max luggage count                  | integer (int32)                         |
+| **description** <br> optional            | Vehicle descriptions               | string                                  |
+| **vehicle_icon** <br> optional           | Vehicle picture url                | string                                  |
+| **price** <br> required                  | equal to TransferFee               | number (double)                         |
 
 
 ## 4.21.BookingCancelInfo
@@ -867,3 +906,16 @@ The Detail resource is used to view a Transfer order details.
 |-----------------------------------|----------------------------|--------------------------------------------------------------|
 | **authentication** <br> required  | Authentication parameter   | [TransferAuthenticationInfo](#42transferauthenticationinfo)  |
 | **order_sn** <br> required        | Order number of Carzenplus | string                                                       |
+
+## 4.23.BookingCancelVO
+
+
+| Name                                | Description                          | Schema                                                                             |
+|-------------------------------------|--------------------------------------|------------------------------------------------------------------------------------|
+| **currency** <br> required          | Currency code in ISO 4217 format     | string                                                                             |
+| **cancel_time** <br> required       | Cancel Unix timespan,unit:Second     | integer (int64)                                                                    |
+| **order_total_price** <br> required | Order total price                    | number (double)                                                                    |
+| **cancel_loss_fee** <br> required   | Cancel loss fees                     | number (double)                                                                    |
+| **order_sn** <br> required          | Order number of Carzenplus           | string                                                                             |
+| **partner_order_sn** <br> required  | Partner order number.                | string                                                                             |
+| **cancel_type** <br> required       | The type of transfer                 | enum (FREE_CANCEL,<br> ALL_LOSS_CANCEL,<br> HALF_LOSS_CANCEL,<br>PART_LOSS_CANCEL) |
