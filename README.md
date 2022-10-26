@@ -105,7 +105,8 @@ The Query resource is the one used to search for available transfer solutions an
         "small":1
     },
     "vehicle_info":{
-        "vehicle_name":"MPV 4pax"
+        "categories":["ECONOMY","STANDARD"],
+        "types":["SUV","SEDAN"]
     },
     "duration_in_seconds":"2998",
     "distance_in_meters":"47310",
@@ -154,7 +155,9 @@ The Query resource is the one used to search for available transfer solutions an
                 "transfer_ticket_info": {
                     "ticket": "kdb6JNE7J9dcoV91X2YiX2jqnmJYg923",
                     "expire_time": 1659693529
-                }
+                },
+                "category": "STANDARD",
+                "type": "SUV"
             },
             {
                 "description": "",
@@ -168,7 +171,9 @@ The Query resource is the one used to search for available transfer solutions an
                 "transfer_ticket_info": {
                     "ticket": "BVuCP5fSVKzPsPF5yR9TxJPf1k0nWV8b",
                     "expire_time": 1659693529
-                }
+                },
+                "category": "STANDARD",
+                "type": "SUV"
             },
             {
                 "description": "",
@@ -182,7 +187,9 @@ The Query resource is the one used to search for available transfer solutions an
                 "transfer_ticket_info": {
                     "ticket": "9rMqVpWEo5Vb2mQ10BmeXEBvCS2OXk7M",
                     "expire_time": 1659693529
-                }
+                },
+                "category": "STANDARD",
+                "type": "SUV"
             }
         ],
         "provider": {
@@ -669,7 +676,7 @@ The Detail resource is used to view a Transfer order details.
 | **drop_off** <br> required            | End point information (address , name, latitude, longitude)         | [TransferPointInfo](#43transferpointinfo)                   |
 | **passenger_info** <br> required      | Number of passenger, include adults, children,infants               | [PassengerInfo](#44passengerinfo)                           |
 | **luggage_info** <br> optional        | Requirements to luggage space to be supported by the vehicle        | [LuggageInfo](#45luggageinfo)                               |
-| **vehicle_info** <br> optional        | Platform model information, need to contact us to bind , null = ALL | [TransferVehicleInfo](#46transfervehicleinfo)               |
+| **vehicle_info** <br> optional        | Vehicle information | [TransferVehicleInfo](#46transfervehicleinfo)               |
 | **duration_in_seconds** <br> required | The numeric duration, in seconds.                                   | integer (int64)                                             |
 | **distance_in_meters** <br> required  | The numeric distance, in meters.                                    | integer  (int64)                                            |
 | **booking_time** <br> required        | The booking time. unix timestamp                                    | integer  (int64)                                            |
@@ -720,8 +727,8 @@ The Detail resource is used to view a Transfer order details.
 
 | Name                           | Description                             | Scheme         |
 |--------------------------------|-----------------------------------------|----------------|
-| **vehicle_id** <br> optional   | Require vehicle ID and/or vehicle name  | integer(int32) |
-| **vehicle_name** <br> optional | Require vehicle ID and/or vehicle name  | integer(int32) |
+| **categories** <br> optional   | Vehicle category  | array enum <br>ECONOMY<br>STANDARD<br> BUSINESS_CLASS<br>FIRST_CLASS |
+| **types** <br> optional | Vehicle type  | array enum <br>SUV<br>SEDAN<br> VAN<br>BUS<br>LIMO |
 
 ## 4.7.ResultModel
 
@@ -890,6 +897,8 @@ The Detail resource is used to view a Transfer order details.
 | **description** <br> optional            | Vehicle descriptions               | string                                  |
 | **vehicle_icon** <br> optional           | Vehicle picture url                | string                                  |
 | **price** <br> required                  | equal to TransferFee               | number (double)                         |
+| **category** <br> required                  | Vehicle category               | enum <br>ECONOMY<br>STANDARD<br> BUSINESS_CLASS<br>FIRST_CLASS                      |
+| **type** <br> required                  | Vehicle type               | enum <br>SUV<br>SEDAN<br> VAN<br>BUS<br>LIMO                        |
 
 
 ## 4.21.BookingCancelInfo
@@ -915,7 +924,4 @@ The Detail resource is used to view a Transfer order details.
 | **currency** <br> required          | Currency code in ISO 4217 format     | string                                                                             |
 | **cancel_time** <br> required       | Cancel Unix timespan,unit:Second     | integer (int64)                                                                    |
 | **order_total_price** <br> required | Order total price                    | number (double)                                                                    |
-| **cancel_loss_fee** <br> required   | Cancel loss fees                     | number (double)                                                                    |
-| **order_sn** <br> required          | Order number of Carzenplus           | string                                                                             |
-| **partner_order_sn** <br> required  | Partner order number.                | string                                                                             |
-| **cancel_type** <br> required       | The type of transfer                 | enum (FREE_CANCEL,<br> ALL_LOSS_CANCEL,<br> HALF_LOSS_CANCEL,<br>PART_LOSS_CANCEL) |
+| **cancel_loss_fee** <br> required   | Cancel loss fees                     | number (double)  
