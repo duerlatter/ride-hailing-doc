@@ -108,8 +108,6 @@ The Query resource is the one used to search for available transfer solutions an
         "categories":["ECONOMY","STANDARD"],
         "types":["SUV","SEDAN"]
     },
-    "duration_in_seconds":"2998",
-    "distance_in_meters":"47310",
     "booking_time":1659507431,
     "flight_code":"CA1234",
     "transfer_type":"Airport2Point",
@@ -320,8 +318,6 @@ Before making a reservation, you must query first.
         "service_fee":135,
         "total_fee":1002.24
     },
-    "duration_in_seconds":"3060",
-    "distance_in_meters":"47310",
     "booking_time":1659692551
 }
 
@@ -677,8 +673,6 @@ The Detail resource is used to view a Transfer order details.
 | **passenger_info** <br> required      | Number of passenger, include adults, children,infants               | [PassengerInfo](#44passengerinfo)                           |
 | **luggage_info** <br> optional        | Requirements to luggage space to be supported by the vehicle        | [LuggageInfo](#45luggageinfo)                               |
 | **vehicle_info** <br> optional        | Vehicle information | [TransferVehicleInfo](#46transfervehicleinfo)               |
-| **duration_in_seconds** <br> required | The numeric duration, in seconds.                                   | integer (int64)                                             |
-| **distance_in_meters** <br> required  | The numeric distance, in meters.                                    | integer  (int64)                                            |
 | **booking_time** <br> required        | The booking time. unix timestamp                                    | integer  (int64)                                            |
 | **flight_code** <br> optional         | The numeric flight number.                                          | string                                                      |
 | **transfer_type** <br> required       | The type of transfer.                                               | enum <br>Airport2Point <br> Point2Airport <br> Point2Point  |
@@ -760,8 +754,6 @@ The Detail resource is used to view a Transfer order details.
 | **passenger_contact_info** <br> required | Passengers’ information. Information about “main” passenger is required | [PassengerContactInfo](#49passengercontactinfo)             |
 | **transfer_services** <br> required      | Platform model information, need to contact us to bind                  | <[TransferServiceItem](#410transferserviceitem)> array      |
 | **price_detail** <br> required           | Payment detail                                                          | [OrderPriceDetail](#411orderpricedetail)                    |
-| **duration_in_seconds** <br> required    | The numeric duration, in seconds.                                       | integer (int32)                                             |
-| **distance_in_meters** <br> required     | The numeric distance, in meters.                                        | integer  (int64)                                            |
 | **booking_time** <br> required           | The booking time. unix timestamp                                        | integer  (int64)                                            |
 
 
