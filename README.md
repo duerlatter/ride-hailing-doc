@@ -14,7 +14,7 @@ For online tests, please visit This Url. If you need an AccessKey ID, or AccessK
 > Contact Email : it.group@carzenplus.com
 
 ## 1.3 URI scheme
-- Host : `api.carzenplus.com`
+- Host : `test.api.carzenplus.com`
 - BasePath : `/v1`
 - Schemes : `HTTPS`
 
