@@ -155,7 +155,8 @@ The Query resource is the one used to search for available transfer solutions an
                     "expire_time": 1659693529
                 },
                 "category": "STANDARD",
-                "type": "SUV"
+                "type": "SUV",
+                "free_waiting_time": 60
             },
             {
                 "description": "",
@@ -171,7 +172,8 @@ The Query resource is the one used to search for available transfer solutions an
                     "expire_time": 1659693529
                 },
                 "category": "STANDARD",
-                "type": "SUV"
+                "type": "SUV",
+                "free_waiting_time": 60
             },
             {
                 "description": "",
@@ -187,7 +189,8 @@ The Query resource is the one used to search for available transfer solutions an
                     "expire_time": 1659693529
                 },
                 "category": "STANDARD",
-                "type": "SUV"
+                "type": "SUV",
+                "free_waiting_time": 60
             }
         ],
         "provider": {
@@ -853,7 +856,7 @@ The Detail resource is used to view a Transfer order details.
 | **price** <br> required               | Itinerary price.                  | number (double)                                              |
 | **currency** <br> required            | Currency code in ISO 4217 format. | string                                                       |
 | **transfer_services** <br> required   | Transfer Services.                | <[TransferServiceVO](#419transferservicevo)><br>array        |
-| **transfer_vehicles** <br> required   | Vehicle information               | <[TransferServiceVO](#420transfervehiclevo)> <br>array       |
+| **transfer_vehicles** <br> required   | Vehicle information               | <[TransferVehicleVO](#420transfervehiclevo)> <br>array       |
 | **provider** <br> optional            | Provider Info                     | [PlatformProviderVO](#415platformprovidervo)                 |
 | **duration_in_seconds** <br> required | The numeric duration, in seconds. | integer (int64)                                              |
 | **distance_in_meters** <br> required  | The numeric distance, in meters.  | integer  (int64)                                             |
@@ -891,6 +894,7 @@ The Detail resource is used to view a Transfer order details.
 | **price** <br> required                  | equal to TransferFee               | number (double)                         |
 | **category** <br> required                  | Vehicle category               | enum <br>ECONOMY<br>STANDARD<br> BUSINESS_CLASS<br>FIRST_CLASS                      |
 | **type** <br> required                  | Vehicle type               | enum <br>SUV<br>SEDAN<br> VAN<br>BUS<br>LIMO                        |
+| **free_waiting_time** <br> optional                  |  Free Waiting Time  unit : minute            | integer (int32)                       |
 
 
 ## 4.21.BookingCancelInfo
