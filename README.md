@@ -156,7 +156,13 @@ The Query resource is the one used to search for available transfer solutions an
                 },
                 "category": "STANDARD",
                 "type": "SUV",
-                "free_waiting_time": 60
+                "free_waiting_time": 60,
+                "tags": [
+                    {
+                        "tag_name": "COVID-19 Prepared",
+                        "tag_value": "COVID-19"
+                    }
+                ]
             },
             {
                 "description": "",
@@ -173,7 +179,13 @@ The Query resource is the one used to search for available transfer solutions an
                 },
                 "category": "STANDARD",
                 "type": "SUV",
-                "free_waiting_time": 60
+                "free_waiting_time": 60,
+                "tags": [
+                    {
+                        "tag_name": "COVID-19 Prepared",
+                        "tag_value": "COVID-19"
+                    }
+                ]
             },
             {
                 "description": "",
@@ -190,7 +202,13 @@ The Query resource is the one used to search for available transfer solutions an
                 },
                 "category": "STANDARD",
                 "type": "SUV",
-                "free_waiting_time": 60
+                "free_waiting_time": 60,
+                "tags": [
+                    {
+                        "tag_name": "COVID-19 Prepared",
+                        "tag_value": "COVID-19"
+                    }
+                ]
             }
         ],
         "provider": {
@@ -668,18 +686,18 @@ The Detail resource is used to view a Transfer order details.
 ## 4.1.TransferQueryInfo
 
 
-| Name                                  | Description                                                         | Scheme                                                      |
-|---------------------------------------|---------------------------------------------------------------------|-------------------------------------------------------------|
-| **authentication** <br> required      | Authentication parameter                                            | [TransferAuthenticationInfo](#42transferauthenticationinfo) |
-| **pick_up** <br> required             | Starting point information (address , name, latitude, longitude)    | [TransferPointInfo](#43transferpointinfo)                   |
-| **drop_off** <br> required            | End point information (address , name, latitude, longitude)         | [TransferPointInfo](#43transferpointinfo)                   |
-| **passenger_info** <br> required      | Number of passenger, include adults, children,infants               | [PassengerInfo](#44passengerinfo)                           |
-| **luggage_info** <br> optional        | Requirements to luggage space to be supported by the vehicle        | [LuggageInfo](#45luggageinfo)                               |
-| **vehicle_info** <br> optional        | Vehicle information | [TransferVehicleInfo](#46transfervehicleinfo)               |
-| **booking_time** <br> required        | The booking time. unix timestamp                                    | integer  (int64)                                            |
-| **flight_code** <br> optional         | The numeric flight number.                                          | string                                                      |
-| **transfer_type** <br> required       | The type of transfer.                                               | enum <br>Airport2Point <br> Point2Airport <br> Point2Point  |
-| **currency** <br> required            | TheCurrency code in ISO 4217 format.                                | string                                                      |
+| Name                                  | Description                                                          | Scheme                                                        |
+|---------------------------------------|----------------------------------------------------------------------|---------------------------------------------------------------|
+| **authentication** <br> required      | Authentication parameter                                             | [TransferAuthenticationInfo](#42transferauthenticationinfo)   |
+| **pick_up** <br> required             | Starting point information (address , name, latitude, longitude)     | [TransferPointInfo](#43transferpointinfo)                     |
+| **drop_off** <br> required            | End point information (address , name, latitude, longitude)          | [TransferPointInfo](#43transferpointinfo)                     |
+| **passenger_info** <br> required      | Number of passenger, include adults, children,infants                | [PassengerInfo](#44passengerinfo)                             |
+| **luggage_info** <br> optional        | Requirements to luggage space to be supported by the vehicle         | [LuggageInfo](#45luggageinfo)                                 |
+| **vehicle_info** <br> optional        | Vehicle information                                                  | [TransferVehicleInfo](#46transfervehicleinfo)                 |
+| **booking_time** <br> required        | The booking time. unix timestamp                                     | integer  (int64)                                              |
+| **flight_code** <br> optional         | The numeric flight number.                                           | string                                                        |
+| **transfer_type** <br> required       | The type of transfer.                                                | enum <br>Airport2Point <br> Point2Airport <br> Point2Point    |
+| **currency** <br> required            | TheCurrency code in ISO 4217 format.                                 | string                                                        |
 
 
 ## 4.2.TransferAuthenticationInfo
@@ -723,7 +741,7 @@ The Detail resource is used to view a Transfer order details.
 ## 4.6.TransferVehicleInfo
 
 | Name                           | Description                             | Scheme         |
-|--------------------------------|-----------------------------------------|----------------|
+|--------------------------------|---------------------------- -------------|----------------|
 | **categories** <br> optional   | Vehicle category  | array enum <br>ECONOMY<br>STANDARD<br> BUSINESS_CLASS<br>FIRST_CLASS |
 | **types** <br> optional | Vehicle type  | array enum <br>SUV<br>SEDAN<br> VAN<br>BUS<br>LIMO |
 
@@ -881,20 +899,21 @@ The Detail resource is used to view a Transfer order details.
 
 ## 4.20.TransferVehicleVO
 
-| Name                                     | Description                        | Schema                                  |
-|------------------------------------------|------------------------------------|-----------------------------------------|
-| **transfer_ticket_info** <br> required   | Book order ticket                  | [TransferTicket](#418transferticket)    |
-| **vehicle_name** <br> optional           | Vehicle model. e.g. A6             | string                                  |
-| **brand_name** <br> optional             | Vehicle brand. e.g. Audi           | string                                  |
-| **vehicle_id** <br> optional             | Vehicle ID                         | integer (int64)                         |
-| **max_passenger_quantity** <br> required | Max seat count,without driver seat | integer (int32)                         |
-| **max_luggage_quantity** <br> required   | Max luggage count                  | integer (int32)                         |
-| **description** <br> optional            | Vehicle descriptions               | string                                  |
-| **vehicle_icon** <br> optional           | Vehicle picture url                | string                                  |
-| **price** <br> required                  | equal to TransferFee               | number (double)                         |
-| **category** <br> required                  | Vehicle category               | enum <br>ECONOMY<br>STANDARD<br> BUSINESS_CLASS<br>FIRST_CLASS                      |
-| **type** <br> required                  | Vehicle type               | enum <br>SUV<br>SEDAN<br> VAN<br>BUS<br>LIMO                        |
-| **free_waiting_time** <br> optional                  |  Free Waiting Time  unit : minute            | integer (int32)                       |
+| Name                                     | Description                        | Schema                                                         |
+|------------------------------------------|------------------------------------|----------------------------------------------------------------|
+| **transfer_ticket_info** <br> required   | Book order ticket                  | [TransferTicket](#418transferticket)                           |
+| **vehicle_name** <br> optional           | Vehicle model. e.g. A6             | string                                                         |
+| **brand_name** <br> optional             | Vehicle brand. e.g. Audi           | string                                                         |
+| **vehicle_id** <br> optional             | Vehicle ID                         | integer (int64)                                                |
+| **max_passenger_quantity** <br> required | Max seat count,without driver seat | integer (int32)                                                |
+| **max_luggage_quantity** <br> required   | Max luggage count                  | integer (int32)                                                |
+| **description** <br> optional            | Vehicle descriptions               | string                                                         |
+| **vehicle_icon** <br> optional           | Vehicle picture url                | string                                                         |
+| **price** <br> required                  | equal to TransferFee               | number (double)                                                |
+| **category** <br> required               | Vehicle category                   | enum <br>ECONOMY<br>STANDARD<br> BUSINESS_CLASS<br>FIRST_CLASS |
+| **type** <br> required                   | Vehicle type                       | enum <br>SUV<br>SEDAN<br> VAN<br>BUS<br>LIMO                   |
+| **free_waiting_time** <br> optional      | Free Waiting Time  unit : minute   | integer (int32)                                                |
+| **tags** <br> optional                   | Vehicle Tag                        | <[TransferTagVO](#424transfertagvo)><br>array                  |
 
 
 ## 4.21.BookingCancelInfo
@@ -920,4 +939,11 @@ The Detail resource is used to view a Transfer order details.
 | **currency** <br> required          | Currency code in ISO 4217 format     | string                                                                             |
 | **cancel_time** <br> required       | Cancel Unix timespan,unit:Second     | integer (int64)                                                                    |
 | **order_total_price** <br> required | Order total price                    | number (double)                                                                    |
-| **cancel_loss_fee** <br> required   | Cancel loss fees                     | number (double)  
+| **cancel_loss_fee** <br> required   | Cancel loss fees                     | number (double)                                                                    |
+
+## 4.24.TransferTagVO
+
+| Name                           | Description | Schema      |
+|--------------------------------|-------------|-------------|
+| **tag_name** <br> required     | Tag Name    | string      |
+| **tag_value** <br> required    | Tag Value   | string      |        
