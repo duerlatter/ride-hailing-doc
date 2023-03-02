@@ -215,6 +215,20 @@ The Query resource is the one used to search for available transfer solutions an
             "name": "Carzen Plus",
             "logo_url": ""
         },
+        "meeting_points":[
+            {
+                "id":3,
+                "title":"M&amp;G - San Francisco International Airport",
+                "description":"1. Please switch on your phone and connect to the airport WiFi.\r\n2. Collect your luggage, and head to Arrivals\r\n3. The driver will await you there\r\n4. If you are unable to find the driver, please contact the number that is provided on your VOUCHER.",
+                "picture":"https://misc-cn.carzenplus.com/upload/image/2303/2e0fee74a400000.png"
+            },
+            {
+                "id":4,
+                "title":"33333333333",
+                "description":"asdasdasd\r\nasdsad\r\nasdasdasd\r\nasdasd",
+                "picture":"https://misc-cn.carzenplus.com/upload/image/2303/2e1099158000000.png"
+            }
+        ],
         "duration_in_seconds": 3060,
         "distance_in_meters": 47310
     },
@@ -868,16 +882,17 @@ The Detail resource is used to view a Transfer order details.
 
 ## 4.17.TransferQueryVO
 
-| Name                                  | Description                       | Schema                                                       |
-|---------------------------------------|-----------------------------------|--------------------------------------------------------------|
-| **transfer_type** <br> required       | The type of transfer.             | enum <br>Airport2Point <br> Point2Airport <br> Point2Point   |
-| **price** <br> required               | Itinerary price.                  | number (double)                                              |
-| **currency** <br> required            | Currency code in ISO 4217 format. | string                                                       |
-| **transfer_services** <br> required   | Transfer Services.                | <[TransferServiceVO](#419transferservicevo)><br>array        |
-| **transfer_vehicles** <br> required   | Vehicle information               | <[TransferVehicleVO](#420transfervehiclevo)> <br>array       |
-| **provider** <br> optional            | Provider Info                     | [PlatformProviderVO](#415platformprovidervo)                 |
-| **duration_in_seconds** <br> required | The numeric duration, in seconds. | integer (int64)                                              |
-| **distance_in_meters** <br> required  | The numeric distance, in meters.  | integer  (int64)                                             |
+| Name                                  | Description                       | Schema                                                     |
+|---------------------------------------|-----------------------------------|------------------------------------------------------------|
+| **transfer_type** <br> required       | The type of transfer.             | enum <br>Airport2Point <br> Point2Airport <br> Point2Point |
+| **price** <br> required               | Itinerary price.                  | number (double)                                            |
+| **currency** <br> required            | Currency code in ISO 4217 format. | string                                                     |
+| **transfer_services** <br> required   | Transfer Services.                | <[TransferServiceVO](#419transferservicevo)><br>array      |
+| **transfer_vehicles** <br> required   | Vehicle information               | <[TransferVehicleVO](#420transfervehiclevo)> <br>array     |
+| **provider** <br> optional            | Provider Info                     | [PlatformProviderVO](#415platformprovidervo)               |
+| **duration_in_seconds** <br> required | The numeric duration, in seconds. | integer (int64)                                            |
+| **distance_in_meters** <br> required  | The numeric distance, in meters.  | integer  (int64)                                           |
+| **meeting_points** <br> optional      | Meeting point                     | <[MeetingPointVO](#425meetingpointvo)> <br>array           |
 
 
 ## 4.18.TransferTicket
@@ -946,4 +961,13 @@ The Detail resource is used to view a Transfer order details.
 | Name                           | Description | Schema      |
 |--------------------------------|-------------|-------------|
 | **tag_name** <br> required     | Tag Name    | string      |
-| **tag_value** <br> required    | Tag Value   | string      |        
+| **tag_value** <br> required    | Tag Value   | string      |      
+
+## 4.25.MeetingPointVO
+
+| Name                          | Description                     | Schema             |
+|-------------------------------|---------------------------------|--------------------|
+| **id** <br> optional          | Meeting point id                | integer (int64)    |
+| **title** <br> optional       | Meeting point title             | string             |   
+| **description** <br> optional | Meeting point title description | string             |   
+| **picture** <br> optional     | Meeting point picture           | string             |   
