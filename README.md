@@ -824,26 +824,26 @@ The Detail resource is used to view a Transfer order details.
 
 ## 4.12.BookingVO
 
-| Name                                     | Description                                                             | Schema                                                                                                           |
-|------------------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
-| **order_status** <br> required           | OrderStatus                                                             | enum(<br>WAIT_CONFIRM <br>WAIT_DISPATCH<br>WAIT_ASSIGN<br>WAIT_SERVICE<br>SERVING<br>COMPLETED<br>CANCELLED<br>) |
-| **order_sn** <br> required               | Order number of Carzenplus                                              | string                                                                                                           |
-| **booking_time** <br> required           | The booking time. unix timestamp                                        | integer  (int64)                                                                                                 |
-| **partner_order_sn** <br> required       | Partner order number.                                                   | string                                                                                                           |
-| **flight_code** <br> required            | The flight number including airline code                                | string                                                                                                           |
-| **transfer_type** <br> required          | The type of transfer.                                                   | enum <br>Airport2Point <br> Point2Airport <br> Point2Point                                                       |
-| **currency** <br> required               | TheCurrency code in ISO 4217 format.                                    | string                                                                                                           |
-| **remark** <br> required                 | Customer remark..                                                       | string                                                                                                           |
-| **pick_up** <br> required                | Starting point information (address , name, latitude, longitude)        | [TransferPointInfo](#43transferpointinfo)                                                                        |
-| **drop_off** <br> required               | End point information (address , name, latitude, longitude)             | [TransferPointInfo](#43transferpointinfo)                                                                        |
-| **passenger_info** <br> required         | Number of passenger, include adults, children,infants                   | [PassengerInfo](#44passengerinfo)                                                                                |
-| **luggage_info** <br> optional           | Requirements to luggage space to be supported by the vehicle            | [LuggageInfo](#45luggageinfo)                                                                                    |
-| **passenger_contact_info** <br> required | Passengers’ information. Information about “main” passenger is required | [PassengerContactInfo](#49passengercontactinfo)                                                                  |
-| **transfer_services** <br> optional      | Support service                                                         | <[BookingTransferServiceVO](#413bookingtransferservicevo)><br> arr                                               |
-| **transfer_vehicle** <br> optional       | Vehicle info                                                            | [BookingVehicleVO](#414bookingvehiclevo)                                                                         |
-| **provider** <br> optional               | Provider Info                                                           | [PlatformProviderVO](#415platformprovidervo)                                                                     |
-| **price_detail** <br> required           | Payment detail                                                          | [BookingPriceDetailVO](#411orderpricedetail)                                                                     |
-| **driver_info** <br> optional            | Driver information                                                      | [BookingDriverVO](#416bookingdrivervo)                                                                           |
+| Name                                     | Description                                                             | Schema                                                             |
+|------------------------------------------|-------------------------------------------------------------------------|--------------------------------------------------------------------|
+| **order_status** <br> required           | OrderStatus                                                             | enum <br> [OrderStatusEnum](#426orderstatusenum)                   |
+| **order_sn** <br> required               | Order number of Carzenplus                                              | string                                                             |
+| **booking_time** <br> required           | The booking time. unix timestamp                                        | integer  (int64)                                                   |
+| **partner_order_sn** <br> required       | Partner order number.                                                   | string                                                             |
+| **flight_code** <br> required            | The flight number including airline code                                | string                                                             |
+| **transfer_type** <br> required          | The type of transfer.                                                   | enum <br>Airport2Point <br> Point2Airport <br> Point2Point         |
+| **currency** <br> required               | TheCurrency code in ISO 4217 format.                                    | string                                                             |
+| **remark** <br> required                 | Customer remark..                                                       | string                                                             |
+| **pick_up** <br> required                | Starting point information (address , name, latitude, longitude)        | [TransferPointInfo](#43transferpointinfo)                          |
+| **drop_off** <br> required               | End point information (address , name, latitude, longitude)             | [TransferPointInfo](#43transferpointinfo)                          |
+| **passenger_info** <br> required         | Number of passenger, include adults, children,infants                   | [PassengerInfo](#44passengerinfo)                                  |
+| **luggage_info** <br> optional           | Requirements to luggage space to be supported by the vehicle            | [LuggageInfo](#45luggageinfo)                                      |
+| **passenger_contact_info** <br> required | Passengers’ information. Information about “main” passenger is required | [PassengerContactInfo](#49passengercontactinfo)                    |
+| **transfer_services** <br> optional      | Support service                                                         | <[BookingTransferServiceVO](#413bookingtransferservicevo)><br> arr |
+| **transfer_vehicle** <br> optional       | Vehicle info                                                            | [BookingVehicleVO](#414bookingvehiclevo)                           |
+| **provider** <br> optional               | Provider Info                                                           | [PlatformProviderVO](#415platformprovidervo)                       |
+| **price_detail** <br> required           | Payment detail                                                          | [BookingPriceDetailVO](#411orderpricedetail)                       |
+| **driver_info** <br> optional            | Driver information                                                      | [BookingDriverVO](#416bookingdrivervo)                             |
 
 
 
@@ -971,3 +971,16 @@ The Detail resource is used to view a Transfer order details.
 | **title** <br> optional       | Meeting point title             | string             |   
 | **description** <br> optional | Meeting point title description | string             |   
 | **picture** <br> optional     | Meeting point picture           | string             |   
+
+## 4.26.OrderStatusEnum
+| Value               | Description              |
+|---------------------|--------------------------|
+| **WAIT_CONFIRM**    | Booking Pending          |
+| **WAIT_DISPATCH**   | Booking Accepted         |
+| **WAIT_ASSIGN**     | Driver Pending           |
+| **WAIT_SERVICE**    | On Proceed               |
+| **DEPARTED**        | On the way to pickup     |
+| **ARRIVED**         | Arrived the pickup Point |
+| **SERVING**         | Pick on board            |
+| **COMPLETED**       | Job completed            |
+| **CANCELLED**       | Booking Canceled         |
