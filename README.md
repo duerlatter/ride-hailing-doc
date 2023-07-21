@@ -756,10 +756,10 @@ The Detail resource is used to view a Transfer order details.
 
 ## 4.6.TransferVehicleInfo
 
-| Name                           | Description                             | Scheme         |
-|--------------------------------|---------------------------- -------------|----------------|
-| **categories** <br> optional   | Vehicle category  | array enum <br>ECONOMY<br>STANDARD<br> BUSINESS_CLASS<br>FIRST_CLASS |
-| **types** <br> optional | Vehicle type  | array enum <br>SUV<br>SEDAN<br> VAN<br>BUS<br>LIMO |
+| Name                           | Description        | Scheme                                                               |
+|--------------------------------|--------------------|----------------------------------------------------------------------|
+| **categories** <br> optional   | Vehicle category   | array enum <br>ECONOMY<br>STANDARD<br> BUSINESS_CLASS<br>FIRST_CLASS |
+| **types** <br> optional        | Vehicle type       | array enum <br>SUV<br>SEDAN<br> VAN<br>BUS<br>LIMO                   |
 
 ## 4.7.ResultModel
 
