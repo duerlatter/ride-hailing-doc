@@ -85,15 +85,13 @@ The Query resource is the one used to search for available transfer solutions an
         "name":"Xiaoshan Airport",
         "latitude":30.236189,
         "longitude":120.438842,
-        "address":"Hangzhou International Airport (HGH)",
-        "google_place_id":"ChIJeZr5cP6TTDQROhcfDB7aCh4"
+        "address":"Hangzhou International Airport (HGH)"
     },
     "drop_off":{
         "name":"Zhejiang University",
         "latitude":30.308888,
         "longitude":120.086499,
-        "address":"No. 866 Yuhangtang Road, Xihu District, Hangzhou, Zhejiang ,China Postal",
-        "google_place_id":"ChIJc9VHk-ViSzQRoIFvkzZfGsc"
+        "address":"No. 866 Yuhangtang Road, Xihu District, Hangzhou, Zhejiang ,China Postal"
     },
     "passenger_info":{
         "adults":1,
@@ -317,15 +315,13 @@ Before making a reservation, you must query first.
         "name":"Xiaoshan Airport",
         "latitude":30.236189,
         "longitude":120.438842,
-        "address":"Hangzhou International Airport (HGH)",
-        "google_place_id":"ChIJeZr5cP6TTDQROhcfDB7aCh4"
+        "address":"Hangzhou International Airport (HGH)"
     },
     "drop_off":{
         "name":"Zhejiang University",
         "latitude":30.308888,
         "longitude":120.086499,
-        "address":"No. 866 Yuhangtang Road, Xihu District, Hangzhou, Zhejiang ,China Postal",
-        "google_place_id":"ChIJc9VHk-ViSzQRoIFvkzZfGsc"
+        "address":"No. 866 Yuhangtang Road, Xihu District, Hangzhou, Zhejiang ,China Postal"
     },
     "passenger_info":{
         "adults":1,
@@ -381,15 +377,13 @@ Before making a reservation, you must query first.
             "name": "Xiaoshan Airport",
             "latitude": 30.236189,
             "longitude": 120.438842,
-            "address": "Hangzhou International Airport (HGH)",
-            "google_place_id": "ChIJeZr5cP6TTDQROhcfDB7aCh4"
+            "address": "Hangzhou International Airport (HGH)"
         },
         "drop_off": {
             "name": "Zhejiang University",
             "latitude": 30.308888,
             "longitude": 120.086499,
-            "address": "No. 866 Yuhangtang Road, Xihu District, Hangzhou, Zhejiang ,China Postal",
-            "google_place_id": "ChIJc9VHk-ViSzQRoIFvkzZfGsc"
+            "address": "No. 866 Yuhangtang Road, Xihu District, Hangzhou, Zhejiang ,China Postal"
         },
         "passenger_info": {
             "adults": 1,
@@ -625,15 +619,13 @@ The Detail resource is used to view a Transfer order details.
             "name": "Xiaoshan Airport",
             "latitude": 30.236189,
             "longitude": 120.438842,
-            "address": "Hangzhou International Airport (HGH)",
-            "google_place_id": "ChIJeZr5cP6TTDQROhcfDB7aCh4"
+            "address": "Hangzhou International Airport (HGH)"
         },
         "drop_off": {
             "name": "Zhejiang University",
             "latitude": 30.308888,
             "longitude": 120.086499,
-            "address": "No. 866 Yuhangtang Road, Xihu District, Hangzhou, Zhejiang ,China Postal",
-            "google_place_id": "ChIJc9VHk-ViSzQRoIFvkzZfGsc"
+            "address": "No. 866 Yuhangtang Road, Xihu District, Hangzhou, Zhejiang ,China Postal"
         },
         "passenger_info": {
             "adults": 1,
@@ -731,12 +723,11 @@ The Detail resource is used to view a Transfer order details.
 | Name                              | Description           | Scheme          |
 |-----------------------------------|-----------------------|-----------------|
 | **name** <br> optional            | Point name            | string          |
-| **google_place_id** <br> optional | Google map placeId    | string          |
 | **address** <br> optional         | Point address details | string          |
 | **latitude** <br> optional        | Latitude              | number (double) |
 | **longitude** <br> optional       | Longitude             | number (double) |
 
-- `google_place_id` ,`address` , `latitude longitude` must be provided at least one.
+- `address` , `latitude longitude` must be provided at least one.
 
 
 ## 4.4.PassengerInfo
