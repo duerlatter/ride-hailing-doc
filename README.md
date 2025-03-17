@@ -722,8 +722,8 @@ The Detail resource is used to view a Transfer order details.
 
 | Name                              | Description           | Scheme          |
 |-----------------------------------|-----------------------|-----------------|
-| **name** <br> optional            | Point name            | string          |
-| **address** <br> optional         | Point address details | string          |
+| **name** <br> optional            | Point name            | string(200)     |
+| **address** <br> optional         | Point address details | string(1000)    |
 | **latitude** <br> optional        | Latitude              | number (double) |
 | **longitude** <br> optional       | Longitude             | number (double) |
 
@@ -755,26 +755,26 @@ The Detail resource is used to view a Transfer order details.
 ## 4.7.ResultModel
 
 
-| Name            | Description                                    | Schema           |
-|-----------------|------------------------------------------------|------------------|
-| **code**        | 200 is success, others number is error flags   | integer(int32)   |
-| **success**     | true or false                                  | boolean          |
-| **request_id**  | Request unique id                              | string           |
-| **message**     | Message                                        | string           |
-| **data**        | Response data,                                 | <?>              |
-| **server_time** | Unix time                                      | integer(int64)   |
+| Name            | Description                                    | Schema         |
+|-----------------|------------------------------------------------|----------------|
+| **code**        | 200 is success, others number is error flags   | integer(int32) |
+| **success**     | true or false                                  | boolean        |
+| **request_id**  | Request unique id                              | string(16)     |
+| **message**     | Message                                        | string         |
+| **data**        | Response data,                                 | <?>            |
+| **server_time** | Unix time                                      | integer(int64) |
 
 ## 4.8.BookingCreateRequest
 
 | Name                                     | Description                                                             | Scheme                                                                                                                                                                                                                                                                      |
 |------------------------------------------|-------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **authentication** <br> required         | Authentication parameter                                                | [TransferAuthenticationInfo](#42transferauthenticationinfo)                                                                                                                                                                                                                 |
-| **transfer_ticket** <br> required        | `/transfer/query` > transfer_vehicles > transfer_ticket_info > ticket   | string                                                                                                                                                                                                                                                                      |
-| **flight_code** <br> optional            | The numeric flight number.                                              | string                                                                                                                                                                                                                                                                      |
+| **transfer_ticket** <br> required        | `/transfer/query` > transfer_vehicles > transfer_ticket_info > ticket   | string(32)                                                                                                                                                                                                                                                                  |
+| **flight_code** <br> optional            | The numeric flight number.                                              | string(20)                                                                                                                                                                                                                                                                  |
 | **transfer_type** <br> required          | The type of transfer.                                                   | enum <br>Airport2Point <br> Point2Airport <br> Point2Point                                                                                                                                                                                                                  |
-| **currency** <br> required               | TheCurrency code in ISO 4217 format.                                    | string                                                                                                                                                                                                                                                                      |
-| **remark** <br> optional                 | Customer remark.                                                        | string                                                                                                                                                                                                                                                                      |
-| **partner_order_sn** <br> required       | Partner order number.                                                   | string                                                                                                                                                                                                                                                                      |
+| **currency** <br> required               | TheCurrency code in ISO 4217 format.                                    | string(3)                                                                                                                                                                                                                                                                   |
+| **remark** <br> optional                 | Customer remark.                                                        | string(2000)                                                                                                                                                                                                                                                                |
+| **partner_order_sn** <br> required       | Partner order number.                                                   | string(45)                                                                                                                                                                                                                                                                  |
 | **pick_up** <br> required                | Starting point information (address , name, latitude, longitude)        | [TransferPointInfo](#43transferpointinfo)                                                                                                                                                                                                                                   |
 | **drop_off** <br> required               | End point information (address , name, latitude, longitude)             | [TransferPointInfo](#43transferpointinfo)                                                                                                                                                                                                                                   |
 | **passenger_info** <br> required         | Number of passenger, include adults, children,infants                   | [PassengerInfo](#44passengerinfo)                                                                                                                                                                                                                                           |
@@ -790,23 +790,23 @@ The Detail resource is used to view a Transfer order details.
 ## 4.9.PassengerContactInfo
 
 
-| Name                                          | Description                   | Schema  |
-|-----------------------------------------------|-------------------------------|---------|
-| **passenger_name** <br> required              | Name of passenger             | string  |
-| **passenger_phone** <br> required             | Mobile phone of passenger     | string  |
-| **passenger_email** <br> optional             | Email address of passenger    | string  |
-| **passenger_whats_app_account** <br> optional | WhatsApp account of passenger | string  |
-| **passenger_wechat_account** <br> optional    | Wechat account of passenger   | string  |
+| Name                                          | Description                   | Schema      |
+|-----------------------------------------------|-------------------------------|-------------|
+| **passenger_name** <br> required              | Name of passenger             | string(200) |
+| **passenger_phone** <br> required             | Mobile phone of passenger     | string(20)  |
+| **passenger_email** <br> optional             | Email address of passenger    | string(200) |
+| **passenger_whats_app_account** <br> optional | WhatsApp account of passenger | string(45)  |
+| **passenger_wechat_account** <br> optional    | Wechat account of passenger   | string(45)  |
 
 
 ## 4.10.TransferServiceItem
 
-| Name                          | Description                           | Schema           |
-|-------------------------------|---------------------------------------|------------------|
-| **quantity** <br> required    | Number of equipement/goods requested  | integer (int32)  |
-| **code** <br> required        | service code                          | string           |
-| **price** <br> required       | price per unit                        | number (double)  |
-| **total_price** <br> required | TotalPrice                            | number (double)  |
+| Name                          | Description                           | Schema          |
+|-------------------------------|---------------------------------------|-----------------|
+| **quantity** <br> required    | Number of equipement/goods requested  | integer (int32) |
+| **code** <br> required        | service code                          | integer (int64) |
+| **price** <br> required       | price per unit                        | number (double) |
+| **total_price** <br> required | TotalPrice                            | number (double) |
 
 
 ## 4.11.OrderPriceDetail
@@ -944,12 +944,12 @@ The Detail resource is used to view a Transfer order details.
 ## 4.23.BookingCancelVO
 
 
-| Name                                | Description                          | Schema                                                                             |
-|-------------------------------------|--------------------------------------|------------------------------------------------------------------------------------|
-| **currency** <br> required          | Currency code in ISO 4217 format     | string                                                                             |
-| **cancel_time** <br> required       | Cancel Unix timespan,unit:Second     | integer (int64)                                                                    |
-| **order_total_price** <br> required | Order total price                    | number (double)                                                                    |
-| **cancel_loss_fee** <br> required   | Cancel loss fees                     | number (double)                                                                    |
+| Name                                | Description                          | Schema          |
+|-------------------------------------|--------------------------------------|-----------------|
+| **currency** <br> required          | Currency code in ISO 4217 format     | string(3)       |
+| **cancel_time** <br> required       | Cancel Unix timespan,unit:Second     | integer (int64) |
+| **order_total_price** <br> required | Order total price                    | number (double) |
+| **cancel_loss_fee** <br> required   | Cancel loss fees                     | number (double) |
 
 ## 4.24.TransferTagVO
 
